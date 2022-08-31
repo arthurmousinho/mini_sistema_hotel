@@ -56,8 +56,12 @@ while True:
                 limpa()
                 while True:
                     try: 
-                        nome = str(input("Nome do hospede: "))
-                        clientes.append(nome)      
+                        nome = str(input("Nome do hospede: ")) 
+                        if nome in clientes:
+                            print("Tem um cliente com esse mesmo nome, tente novamente") 
+                            continue
+                        else:
+                            clientes.append(nome) 
                     except(TypeError,ValueError):
                         print("Tente novamente")
                         continue
