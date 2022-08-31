@@ -24,6 +24,7 @@ def menu_principal():
     |    [2] Consumação no hotel                                    |
     |    [3] Adicionar produtos para a consumação dos clientes      |
     |    [4] Check-out de clientes                                  |
+    |    [5] Ver clientes que estão hospedados                      |
     |                                                               |
     -----------------------------------------------------------------
 
@@ -41,7 +42,7 @@ while True:
         limpa()
         continue
     else:
-        if opcao > 4 or opcao < 1:
+        if opcao > 5 or opcao < 1:
             print("Opção inválida")
 
 
@@ -244,7 +245,33 @@ while True:
                                     limpa()
                                     print("Checkout cancelado")
                                     break
-                    break       
+                    break  
+
+
+        elif opcao == 5:
+            while True:
+                print("Clientes hospedados no hotel")
+                j = 0
+                while j < len(quartos_ocupados):
+                    print(f'''
+                            [{quartos_ocupados[j]}]                 {clientes[j]}
+                    ''')
+                    j = j + 1
+                try:
+                    sair = int(input("[1] PARA SAIR"))
+                except(ValueError,TypeError):
+                    limpa()
+                    print("Tente novamente")
+                    continue
+                else:
+                    if sair != 1:
+                        limpa()
+                        print("Opção inválida")
+                        continue
+                    else:
+                        limpa()
+                        break
+
 
 
 
