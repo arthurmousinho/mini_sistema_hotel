@@ -146,7 +146,6 @@ while True:
 
 
         elif opcao == 3: # Adicionar produtos para a consumação dos clientes 
-            pass
             while True:
                 try:
                     nome_novo_produto = str(input("Nome do novo produto: "))
